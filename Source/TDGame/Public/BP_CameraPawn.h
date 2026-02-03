@@ -29,10 +29,8 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	class USceneComponent* Root;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	class USpringArmComponent* SpringArm;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	class UCameraComponent* Camera;
 
 	UPROPERTY(EditAnywhere, Category = "Camera")

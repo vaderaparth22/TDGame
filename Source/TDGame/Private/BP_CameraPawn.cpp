@@ -18,6 +18,7 @@ ABP_CameraPawn::ABP_CameraPawn()
     SpringArm->SetupAttachment(Root);
 
     SpringArm->TargetArmLength = CameraHeight;
+    SpringArm->SetUsingAbsoluteRotation(true);
     SpringArm->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
     SpringArm->bUsePawnControlRotation = false;
 
@@ -29,7 +30,7 @@ ABP_CameraPawn::ABP_CameraPawn()
 void ABP_CameraPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+    SpringArm->TargetArmLength = CameraHeight;
 }
 
 // Called every frame

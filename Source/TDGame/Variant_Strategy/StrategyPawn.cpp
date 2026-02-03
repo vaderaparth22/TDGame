@@ -32,6 +32,13 @@ AStrategyPawn::AStrategyPawn()
 	FloatingPawnMovement->SetPlaneConstraintOrigin(FVector::UpVector * 1500.0f);
 }
 
+void AStrategyPawn::BeginPlay()
+{
+	Super::BeginPlay();
+	SetActorLocation(FVector::ZeroVector);
+	SetActorRotation(FQuat::Identity);
+}
+
 void AStrategyPawn::SetZoomModifier(float Value)
 {
 	// set the ortho width on the camera
