@@ -14,6 +14,7 @@ class AStrategyHUD;
 class AStrategyNPC;
 class UInputAction;
 class ATDGridTile;
+class ATDWeapon;
 
 /** Enum to determine the last used input type */
 UENUM(BlueprintType)
@@ -205,6 +206,9 @@ public:
 	/** Passes the list of selected units */
 	const TArray<AStrategyUnit*>& GetSelectedUnits();
 
+	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
+	TSubclassOf<ATDWeapon> WeaponToSpawn;
+
 protected:
 
 	/** Moves the camera by the given input */
@@ -301,4 +305,6 @@ protected:
 
 	/** Detects taps and double taps for mobile platforms. */
 	void CheckTouchTap(bool& bTapped, bool& bDoubleTapped);
+
+	void SpawnTurret(ATDGridTile* Tile);
 };

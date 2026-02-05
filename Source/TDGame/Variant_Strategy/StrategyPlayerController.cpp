@@ -17,6 +17,7 @@
 #include "NavigationSystem.h"
 #include "Engine/OverlapResult.h"
 #include "ATDGridTile.h"
+#include "TDWeapon.h"
 
 AStrategyPlayerController::AStrategyPlayerController()
 {
@@ -227,11 +228,13 @@ void AStrategyPlayerController::SelectClick(const FInputActionValue& Value)
 
 	ATDGridTile* HitTile = Cast<ATDGridTile>(OutHit.GetActor());
 
-	//UE_LOG(LogTemp, Warning, TEXT("Clicked Actor: %s"), *OutHit.GetActor()->GetName());
-
 	if (HitTile)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *OutHit.Location.ToString());
+		if (!HitTile->isOccupied)
+		{
+			HitTile->isOccupied = true;
+			SpawnTurret(HitTile);
+		}
 	}
 
 	/*if (GetLocationUnderCursor(CachedSelection))
@@ -827,4 +830,9 @@ void AStrategyPlayerController::CheckTouchTap(bool& bTapped, bool& bDoubleTapped
 
 	// save the tap release time
 	LastTapReleaseTime = GameTime;
+}
+
+void AStrategyPlayerController::SpawnTurret(ATDGridTile* Tile)
+{
+	GetWorld()->SpawnActor<ATDWeapon>(WeaponToSpawn, Tile->GetActorLocation(), FRotator::ZeroRotator);
 }
