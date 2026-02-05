@@ -13,6 +13,7 @@ struct FInputActionValue;
 class AStrategyHUD;
 class AStrategyNPC;
 class UInputAction;
+class ATDGridTile;
 
 /** Enum to determine the last used input type */
 UENUM(BlueprintType)

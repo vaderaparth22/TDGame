@@ -16,6 +16,7 @@
 #include "StrategyUnit.h"
 #include "NavigationSystem.h"
 #include "Engine/OverlapResult.h"
+#include "ATDGridTile.h"
 
 AStrategyPlayerController::AStrategyPlayerController()
 {
@@ -220,11 +221,23 @@ void AStrategyPlayerController::SelectHoldCompleted(const FInputActionValue& Val
 
 void AStrategyPlayerController::SelectClick(const FInputActionValue& Value)
 {
+	FHitResult OutHit;
 
-	if (GetLocationUnderCursor(CachedSelection))
+	GetHitResultUnderCursorByChannel(SelectionTraceChannel, true, OutHit);
+
+	ATDGridTile* HitTile = Cast<ATDGridTile>(OutHit.GetActor());
+
+	//UE_LOG(LogTemp, Warning, TEXT("Clicked Actor: %s"), *OutHit.GetActor()->GetName());
+
+	if (HitTile)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *OutHit.Location.ToString());
+	}
+
+	/*if (GetLocationUnderCursor(CachedSelection))
 	{
 		DoSelectionCommand();
-	}
+	}*/
 }
 
 void AStrategyPlayerController::SelectionModifier(const FInputActionValue& Value)
