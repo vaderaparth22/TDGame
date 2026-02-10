@@ -4,6 +4,11 @@
 
 This project is currently under active development. Below is the planned features.
 
+## 🎥 Gameplay Progress
+
+### Enemy Movement & Turret Placement
+![Enemy Pathing](docs/media/gamegif.gif)
+
 ## 🚧 In Progress
 
 - Tower placement system
