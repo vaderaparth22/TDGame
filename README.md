@@ -9,11 +9,12 @@ This project is currently under active development. Below is the planned feature
 ### Enemy Movement & Turret Placement
 ![Enemy Pathing](docs/media/gamegif.gif)
 
+### Enemy Wave Spawning & Elimination
+![Enemy Wave](docs/media/gamegif2.gif)
+
 ## 🚧 In Progress
 
-- Tower placement system
-- Enemy pathing and wave system
-- Basic shooting / damage logic
+- Multiple wave system
 - Health system for enemies
 
 ## 🧠 Planned Features
