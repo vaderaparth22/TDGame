@@ -1,5 +1,7 @@
 # Tower Defense Game - C++ & Unreal Engine 5.7
 
+**Full Documentation:** [View Documentation]([docs/Blueprint_Documentation.md](https://docs.google.com/document/d/1sJcc1XZ3ufSh-NFIMP3gs0c-YU66MsWnhT7GSM-vxQk/edit?usp=sharing))
+
 ## 🎮 Project Status
 
 This project is currently under active development. Below is the planned features.
